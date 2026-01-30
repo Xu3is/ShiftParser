@@ -1,11 +1,16 @@
 package parser;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main {
-    static void main() {
+    static void main() throws IOException {
         DataReader reader = new DataReader();
-        reader.readFile(Path.of("input/in1.txt"));
-        reader.testprintall();
+        OutputWriter writer = new OutputWriter();
+
+        reader.readFile(Path.of("input/in2.txt"));
+        writer.IntegersOutputToFiles(reader.GetInts());
+        writer.DoublesOutputToFiles(reader.GetDoubles());
+        writer.StringsOutputToFiles(reader.GetStrings());
     }
 }

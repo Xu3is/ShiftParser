@@ -15,6 +15,15 @@ public class DataReader {
     private final List<Double> doubles = new ArrayList<>();
     private final List<String> strings = new ArrayList<>();
 
+    public List<BigInteger> GetInts() {
+        return this.ints;
+    }
+    public List<Double> GetDoubles() {
+        return this.doubles;
+    }
+    public List<String> GetStrings() {
+        return this.strings;
+    }
 
     private void EndifyType(String line) {
         try {
@@ -49,8 +58,8 @@ public class DataReader {
     }
 
     public void testprintall() {
-        System.out.println(ints);
-        System.out.println(doubles);
-        System.out.println(strings);
+        System.out.println(this.ints);
+        System.out.println(this.doubles);
+        System.out.println(this.strings);
     }
 }
