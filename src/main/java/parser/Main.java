@@ -1,7 +1,10 @@
 package parser;
 
+import java.nio.file.Path;
+
 public class Main {
     static void main() {
-        System.out.println("parser");
+        DataReader reader = new DataReader();
+        reader.readFile(Path.of("input/in2.txt"));
     }
 }
