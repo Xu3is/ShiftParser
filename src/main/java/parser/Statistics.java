@@ -59,7 +59,7 @@ public class Statistics {
     public void PrintShortStatistics() {
         System.out.println("Количество записанных целых чисел: " + intCounter);
         System.out.println("Количество записанных чисел с плавающей точкой: " + doubleCounter);
-        System.out.println("Количество записанных целых чисел: " + stringCounter);
+        System.out.println("Количество записанных строк: " + stringCounter);
     }
 
     public void PrintFullStatistics() {
