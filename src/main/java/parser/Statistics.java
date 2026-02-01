@@ -23,13 +23,14 @@ public class Statistics {
 
     public void CollectStatInt(BigInteger num) {
         intCounter = intCounter.add(BigInteger.ONE);
-        intSum.add(num);
         this.intSum = this.intSum.add(num);
-
-        if (num.compareTo(intMax) > 0) {
-                intMax = num;
+        if (intCounter.equals(BigInteger.ONE)) {
+            intMax = num;
+            intMin = num;
         }
-        if (num.compareTo(BigInteger.ZERO) < 0) {
+        if (num.compareTo(intMax) > 0) {
+            intMax = num;
+        } else if(num.compareTo(intMin) < 0) {
             intMin = num;
         }
     }
