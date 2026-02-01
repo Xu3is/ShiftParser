@@ -3,14 +3,14 @@ package parser;
 import java.math.BigInteger;
 
 public class Statistics {
-    private BigInteger intCounter;
+    private BigInteger intCounter = BigInteger.ZERO;
     private int doubleCounter = 0;
     private int stringCounter = 0;
 
-    private BigInteger intMin;
-    private BigInteger intMax;
-    private BigInteger intSum;
-    private BigInteger intAverage;
+    private BigInteger intMin= BigInteger.ZERO;
+    private BigInteger intMax= BigInteger.ZERO;
+    private BigInteger intSum = BigInteger.ZERO;
+    private BigInteger intAverage = BigInteger.ZERO;
 
     private double doubleMin;
     private double doubleMax;
