@@ -29,7 +29,7 @@ public class Statistics {
         if (num.compareTo(intMax) > 0) {
                 intMax = num;
         }
-        if (num.compareTo(intMin) < 0) {
+        if (num.compareTo(BigInteger.ZERO) < 0) {
             intMin = num;
         }
     }
@@ -38,10 +38,13 @@ public class Statistics {
         doubleCounter++;
         doubleSum += num;
 
-        if (num > Double.MAX_VALUE) {
+        if (doubleCounter == 1) {
             doubleMax = num;
+            doubleMin = num;
         }
-        if (num < Double.MIN_VALUE) {
+        if (num > doubleMax) {
+            doubleMax = num;
+        } else if (num < doubleMin) {
             doubleMin = num;
         }
     }
