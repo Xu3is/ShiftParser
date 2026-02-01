@@ -25,30 +25,41 @@ public class DataReader {
         return this.strings;
     }
 
-    private void EndifyType(String line) {
+    private void EndifyType(String line, Statistics stat) {
         try {
             BigInteger num = new BigInteger(line);
             ints.add(num);
+
+            if (stat != null) {
+                stat.CollectStatInt(num);
+            }
             return;
         } catch (NumberFormatException _) {}
 
         try {
             double numdub = Double.parseDouble(line);
             doubles.add(numdub);
+
+            if (stat != null) {
+                stat.CollectStatDouble(numdub);
+            }
             return;
         } catch (NumberFormatException _) {}
 
+        if (stat != null) {
+            stat.CollectStatString(line);
+        }
         strings.add(line);
     }
 
-    public void readFiles(List<Path> filePath) {
+    public void readFiles(List<Path> filePath, Statistics stat) {
         for (Path path : filePath) {
             try (BufferedReader br = new BufferedReader(new FileReader(path.toFile()))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     line = line.trim();
                     if (!line.isEmpty()) {
-                        EndifyType(line);
+                        EndifyType(line, stat);
                     }
                 }
             } catch (FileNotFoundException e) {
