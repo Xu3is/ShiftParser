@@ -13,15 +13,29 @@ public class CommandLineArguments {
     private  boolean appendable = false;
     private  boolean shortStat = false;
     private  boolean fullStat = false;
+    private Statistics statistic = null;
+
+    public Statistics getStatistic() {
+        return statistic;
+    }
+    public Statistics SetStatistic(Statistics statistic) {
+        return this.statistic = statistic;
+    }
 
     public void setFiles(Path file) {
         inputFiles.add(file);
     }
 
-
     public List<Path> getInputFiles() {
         return inputFiles;
     }
+    public void SetShortStat() {
+        shortStat = true;
+    }
+    public void SetfullStat() {
+        fullStat = true;
+    }
+
     public Path getOutputPath() {
         return outputPath;
     }
@@ -34,5 +48,5 @@ public class CommandLineArguments {
     public boolean isShortStat() {
         return shortStat;
     }
-    public boolean isLongStat() {return fullStat;}
+    public boolean isFullStat() {return fullStat;}
 }
