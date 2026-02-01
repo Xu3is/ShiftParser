@@ -4,13 +4,11 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main {
-    static void main() throws IOException {
+    static void main(String[] args) throws IOException {
+        CommandLineArguments maincli = CommandLineArgumentsParser.parseArguments(args);
         DataReader reader = new DataReader();
+        reader.readFiles(maincli.getInputFiles());
         OutputWriter writer = new OutputWriter();
-
-        reader.readFile(Path.of("input/in2.txt"));
-        writer.IntegersOutputToFiles(reader.GetInts());
-        writer.DoublesOutputToFiles(reader.GetDoubles());
-        writer.StringsOutputToFiles(reader.GetStrings());
+        writer.DataOutputToAllFiles(reader);
     }
 }

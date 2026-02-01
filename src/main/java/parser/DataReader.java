@@ -41,25 +41,21 @@ public class DataReader {
         strings.add(line);
     }
 
-    public void readFile(Path filePath) {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath.toFile()))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                line = line.trim();
-                if (!line.isEmpty()) {
-                    EndifyType(line);
+    public void readFiles(List<Path> filePath) {
+        for (Path path : filePath) {
+            try (BufferedReader br = new BufferedReader(new FileReader(path.toFile()))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    line = line.trim();
+                    if (!line.isEmpty()) {
+                        EndifyType(line);
+                    }
                 }
+            } catch (FileNotFoundException e) {
+                System.err.println("Такой файл не найден " + path);
+            } catch (IOException e) {
+                System.err.println("Ошибка чтения файла " + e.getMessage());
             }
-        } catch (FileNotFoundException e) {
-            System.err.println("Такой файл не найден " + filePath);
-        } catch (IOException e) {
-            System.err.println("Ошибка чтения файла " + e.getMessage());
         }
-    }
-
-    public void testprintall() {
-        System.out.println(this.ints);
-        System.out.println(this.doubles);
-        System.out.println(this.strings);
     }
 }

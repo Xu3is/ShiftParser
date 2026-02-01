@@ -19,16 +19,10 @@ public class OutputWriter  {
             }
         }
     }
-    public void IntegersOutputToFiles(List<BigInteger> ints) throws IOException {
-        DataOutputToFiles(ints, "sample-integers.txt");
-        System.out.println("целые числа записаны в файл");
-    }
-    public void DoublesOutputToFiles(List<Double> doubles) throws IOException {
-        DataOutputToFiles(doubles, "sample-doubles.txt");
-        System.out.println("числа с плавающей точкой записаны в файл");
-    }
-    public void StringsOutputToFiles(List<String> strings) throws IOException {
-        DataOutputToFiles(strings, "sample-strings.txt");
-        System.out.println("строки записаны в файл");
+    public void DataOutputToAllFiles(DataReader reader) throws IOException {
+        DataOutputToFiles(reader.GetInts(), "sample-integers.txt");
+        DataOutputToFiles(reader.GetDoubles(), "sample-doubles.txt");
+        DataOutputToFiles(reader.GetStrings(), "sample-strings.txt");
+        System.out.println("Данные записаны успешно");
     }
 }
