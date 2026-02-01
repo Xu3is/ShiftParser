@@ -23,6 +23,5 @@ public class OutputWriter  {
         DataOutputToFiles(reader.GetInts(), "sample-integers.txt");
         DataOutputToFiles(reader.GetDoubles(), "sample-doubles.txt");
         DataOutputToFiles(reader.GetStrings(), "sample-strings.txt");
-        System.out.println("Данные записаны успешно");
     }
 }
