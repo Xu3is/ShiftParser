@@ -51,11 +51,13 @@ public class Statistics {
     }
     public void CollectStatString(String string) {
         stringCounter++;
-
-        if (string.length() > Integer.MAX_VALUE) {
+        if (stringCounter == 1) {
             maxStringSize = string.length();
+            minStringSize = string.length();
         }
-        if (string.length() < Integer.MAX_VALUE) {
+        if ( string.length() > maxStringSize) {
+            maxStringSize = string.length();
+        } else if (string.length() < minStringSize) {
             minStringSize = string.length();
         }
     }
