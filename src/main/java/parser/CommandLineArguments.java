@@ -5,37 +5,34 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComandLineArguments {
+public class CommandLineArguments {
 
-    private final List<Path> inputFiles = new ArrayList<>();
-    private final Path outputPath = Paths.get(".");
-    private final String prefix = "";
-    private final boolean appendable = false;
-    private final boolean shortStat = false;
-    private final boolean longStat = false;
+    private  final List<Path> inputFiles = new ArrayList<>();
+    private  Path outputPath = Paths.get(".");
+    private  String prefix = "";
+    private  boolean appendable = false;
+    private  boolean shortStat = false;
+    private  boolean fullStat = false;
+
+    public void setFiles(Path file) {
+        inputFiles.add(file);
+    }
+
 
     public List<Path> getInputFiles() {
         return inputFiles;
     }
-    public void setFiles(Path file) {
-        inputFiles.add(file);
-    }
     public Path getOutputPath() {
         return outputPath;
     }
-
     public String getPrefix() {
         return prefix;
     }
-
     public boolean isAppendable() {
         return appendable;
     }
     public boolean isShortStat() {
         return shortStat;
     }
-
-    public boolean isLongStat() {
-        return longStat;
-    }
+    public boolean isLongStat() {return fullStat;}
 }
