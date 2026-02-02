@@ -13,9 +13,18 @@ public class CommandLineArgumentsParser {
             if (current.equals("-s")) {
                 cli.SetShortStat();
                 cli.SetStatistic(new Statistics());
+
             } else if (current.equals("-f")) {
-                cli.SetfullStat();
+                cli.SetFullStat();
                 cli.SetStatistic(new Statistics());
+            } else if (current.equals("-p")) {
+                if (i + 1 >= args.length) {
+                    throw new IllegalArgumentException("Вы не указали префикс");
+                }
+                cli.setPrefix(args[i + 1]);
+                i++;
+            } else if (current.startsWith("-")) {
+                continue;
             } else {
                 cli.setFiles(Paths.get(current));
 

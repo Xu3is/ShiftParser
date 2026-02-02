@@ -12,11 +12,11 @@ public class Main {
         if (maincli.getStatistic() != null) {
             if (maincli.isShortStat()) {
                 maincli.getStatistic().PrintShortStatistics();
-            } else {
+            } else if (maincli.isFullStat()) {
                 maincli.getStatistic().PrintFullStatistics();
             }
         }
         OutputWriter writer = new OutputWriter();
-        writer.DataOutputToAllFiles(reader);
+        writer.DataOutputToAllFiles(reader, maincli.getPrefix());
     }
 }

@@ -19,9 +19,9 @@ public class OutputWriter  {
             }
         }
     }
-    public void DataOutputToAllFiles(DataReader reader) throws IOException {
-        DataOutputToFiles(reader.GetInts(), "sample-integers.txt");
-        DataOutputToFiles(reader.GetDoubles(), "sample-doubles.txt");
-        DataOutputToFiles(reader.GetStrings(), "sample-strings.txt");
+    public void DataOutputToAllFiles(DataReader reader, String prefix) throws IOException {
+        DataOutputToFiles(reader.GetInts(), prefix + "integers.txt");
+        DataOutputToFiles(reader.GetDoubles(), prefix + "doubles.txt");
+        DataOutputToFiles(reader.GetStrings(), prefix + "strings.txt");
     }
 }
