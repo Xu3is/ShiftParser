@@ -17,6 +17,6 @@ public class Main {
             }
         }
         OutputWriter writer = new OutputWriter();
-        writer.DataOutputToAllFiles(reader, maincli.getPrefix(), maincli.getOutputPath());
+        writer.DataOutputToAllFiles(reader, maincli.getPrefix(), maincli.getOutputPath(), maincli.isAppendable());
     }
 }

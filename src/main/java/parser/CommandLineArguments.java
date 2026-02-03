@@ -55,6 +55,9 @@ public class CommandLineArguments {
     public boolean isAppendable() {
         return appendable;
     }
+    public void setAppendable() {
+        this.appendable = true;
+    }
 
     public boolean isShortStat() {
         return shortStat;

@@ -29,12 +29,13 @@ public class CommandLineArgumentsParser {
                 }
                 cli.setOutputPath(Paths.get(args[i + 1]));
                 i++;
+            } else if (current.equals("-a")){
+                cli.setAppendable();
             } else {
                 cli.setFiles(Paths.get(current));
 
             }
         }
-
         if (cli.getInputFiles().isEmpty()) {
             throw new IllegalArgumentException("Вы не указали входные файлы");
         }
