@@ -23,8 +23,12 @@ public class CommandLineArgumentsParser {
                 }
                 cli.setPrefix(args[i + 1]);
                 i++;
-            } else if (current.startsWith("-")) {
-                continue;
+            } else if (current.startsWith("-o")) {
+                if (i + 1 >= args.length) {
+                    throw new IllegalArgumentException("Для -o нужен путь");
+                }
+                cli.setOutputPath(Paths.get(args[i + 1]));
+                i++;
             } else {
                 cli.setFiles(Paths.get(current));
 

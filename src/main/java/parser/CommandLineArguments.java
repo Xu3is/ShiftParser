@@ -9,7 +9,7 @@ public class CommandLineArguments {
 
     private final List<Path> inputFiles = new ArrayList<>();
     private Path outputPath = Paths.get(".");
-    private String prefix = "sample";
+    private String prefix = "";
     private boolean appendable = false;
     private boolean shortStat = false;
     private boolean fullStat = false;
@@ -40,6 +40,9 @@ public class CommandLineArguments {
 
     public Path getOutputPath() {
         return outputPath;
+    }
+    public void setOutputPath(Path path) {
+        this.outputPath = path;
     }
 
     public String getPrefix() {
