@@ -37,7 +37,8 @@ public class CommandLineArgumentsParser {
             }
         }
         if (cli.getInputFiles().isEmpty()) {
-            throw new IllegalArgumentException("Вы не указали входные файлы");
+            System.out.println("Вы не указали входные файлы, программа отработать не сможет!");
+            System.exit(1);
         }
         return cli;
     }
