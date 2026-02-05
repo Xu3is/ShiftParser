@@ -1,7 +1,6 @@
 package parser;
 
 import java.io.IOException;
-import java.nio.file.Path;
 
 public class Main {
     static void main(String[] args) throws IOException {
@@ -18,5 +17,7 @@ public class Main {
         }
         OutputWriter writer = new OutputWriter();
         writer.DataOutputToAllFiles(reader, maincli.getPrefix(), maincli.getOutputPath(), maincli.isAppendable());
+
+        System.out.print("Программа отработала");
     }
 }

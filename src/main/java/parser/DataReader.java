@@ -18,9 +18,11 @@ public class DataReader {
     public List<BigInteger> GetInts() {
         return this.ints;
     }
+
     public List<Double> GetDoubles() {
         return this.doubles;
     }
+
     public List<String> GetStrings() {
         return this.strings;
     }
@@ -34,7 +36,8 @@ public class DataReader {
                 stat.CollectStatInt(num);
             }
             return;
-        } catch (NumberFormatException _) {}
+        } catch (NumberFormatException _) {
+        }
 
         try {
             double numdub = Double.parseDouble(line);
@@ -44,7 +47,8 @@ public class DataReader {
                 stat.CollectStatDouble(numdub);
             }
             return;
-        } catch (NumberFormatException _) {}
+        } catch (NumberFormatException _) {
+        }
 
         if (stat != null) {
             stat.CollectStatString(line);

@@ -7,8 +7,8 @@ public class Statistics {
     private int doubleCounter = 0;
     private int stringCounter = 0;
 
-    private BigInteger intMin= BigInteger.ZERO;
-    private BigInteger intMax= BigInteger.ZERO;
+    private BigInteger intMin = BigInteger.ZERO;
+    private BigInteger intMax = BigInteger.ZERO;
     private BigInteger intSum = BigInteger.ZERO;
     private BigInteger intAverage = BigInteger.ZERO;
 
@@ -30,7 +30,7 @@ public class Statistics {
         }
         if (num.compareTo(intMax) > 0) {
             intMax = num;
-        } else if(num.compareTo(intMin) < 0) {
+        } else if (num.compareTo(intMin) < 0) {
             intMin = num;
         }
     }
@@ -49,13 +49,14 @@ public class Statistics {
             doubleMin = num;
         }
     }
+
     public void CollectStatString(String string) {
         stringCounter++;
         if (stringCounter == 1) {
             maxStringSize = string.length();
             minStringSize = string.length();
         }
-        if ( string.length() > maxStringSize) {
+        if (string.length() > maxStringSize) {
             maxStringSize = string.length();
         } else if (string.length() < minStringSize) {
             minStringSize = string.length();

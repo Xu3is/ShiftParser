@@ -34,6 +34,7 @@ public class CommandLineArguments {
     public void SetShortStat() {
         shortStat = true;
     }
+
     public void SetFullStat() {
         fullStat = true;
     }
@@ -41,6 +42,7 @@ public class CommandLineArguments {
     public Path getOutputPath() {
         return outputPath;
     }
+
     public void setOutputPath(Path path) {
         this.outputPath = path;
     }
@@ -48,6 +50,7 @@ public class CommandLineArguments {
     public String getPrefix() {
         return prefix;
     }
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -55,6 +58,7 @@ public class CommandLineArguments {
     public boolean isAppendable() {
         return appendable;
     }
+
     public void setAppendable() {
         this.appendable = true;
     }
@@ -62,6 +66,8 @@ public class CommandLineArguments {
     public boolean isShortStat() {
         return shortStat;
     }
-    public boolean isFullStat() {return fullStat;
+
+    public boolean isFullStat() {
+        return fullStat;
     }
 }
