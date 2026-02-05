@@ -19,9 +19,23 @@ public class CommandLineArgumentsParser {
                 cli.SetStatistic(new Statistics());
             } else if (current.equals("-p")) {
                 if (i + 1 >= args.length) {
-                    throw new IllegalArgumentException("Вы не указали префикс");
+                    System.out.println("Для утилинты -p нужен префикс, опция -p игнорируется");
+                    continue;
                 }
-                cli.setPrefix(args[i + 1]);
+                String next = args[i + 1];
+                if (next.startsWith("-")) {
+                    System.out.println("После опции -p должен идти префикс, опция игнорируется");
+                    continue;
+                }
+                if (next.trim().isEmpty()) {
+                    System.out.println("Префикс пустой, опция -p игнорируется");
+                    continue;
+                }
+                if (next.toLowerCase().endsWith(".txt")) {
+                    System.out.println("Префикс не может быть файлом, опиция -p игнорируется");
+                    continue;
+                }
+                cli.setPrefix(next);
                 i++;
             } else if (current.startsWith("-o")) {
                 if (i + 1 >= args.length) {
@@ -33,11 +47,10 @@ public class CommandLineArgumentsParser {
                 cli.setAppendable();
             } else {
                 cli.setFiles(Paths.get(current));
-
             }
         }
         if (cli.getInputFiles().isEmpty()) {
-            System.out.println("Вы не указали входные файлы, программа отработать не сможет!");
+            System.out.println("Вы не указали входные файлы, программа отработать не сможет");
             System.exit(1);
         }
         return cli;
