@@ -59,6 +59,9 @@ public class CommandLineArgumentsParser {
                 i++;
             } else if (current.equals("-a")){
                 cli.setAppendable();
+            } else if (current.startsWith("-")) {
+                System.out.println("Опции " + current + " не существует, неизвестная опция пропущена");
+                continue;
             } else {
                 cli.setFiles(Paths.get(current));
             }
