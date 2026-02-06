@@ -18,6 +18,6 @@ public class Main {
         OutputWriter writer = new OutputWriter();
         writer.DataOutputToAllFiles(reader, maincli.getPrefix(), maincli.getOutputPath(), maincli.isAppendable());
 
-        System.out.print("Программа отработала");
+        System.out.println("Программа отработала");
     }
 }
