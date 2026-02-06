@@ -1,0 +1,8 @@
+777
+string
+seven
+float
+123456t
+tatatat
+0,1
+0.0
