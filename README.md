@@ -22,7 +22,7 @@ mvn package
 ```
 3. После сборки исполняемый JAR файл будет создан в папке target, пример запуска:
 ```bash
-java -jar target/Parser-main.jar -s -a -p sample- input/exampleIn1.txt exampleIn2.txt
+java -jar target/Parser-main.jar -s -a -p sample- input/exampleIn1.txt input/exampleIn2.txt
 ```
 
 ## Примеры входных файлов
